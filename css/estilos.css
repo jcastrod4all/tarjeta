@@ -284,6 +284,7 @@ a {
   @media screen and (max-width: 699px) {
     .proyectos {
         grid-template-columns: 100%;
+        grid-gap:20px;
     }
     .slider_info .informacion article .slide {
     padding: 5px 40px;
