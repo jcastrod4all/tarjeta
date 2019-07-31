@@ -161,7 +161,7 @@ $(document).ready(function (){
 
   $('#info-next').on('click', function (e){
     e.preventDefault();
-    portafolio();
+   // portafolio();
     if(info.posicion < info.numeroSlides) {
       // Nos aseguramos de que las demas slides empiecen desde la derecha.
       info.padre.children().not('.active').css({
@@ -204,13 +204,12 @@ $(document).ready(function (){
       info.posicion = 1;
     }
     altoInfo();
-
   });
 
   // Boton Anterior
   $('#info-prev').on('click', function(e){
     e.preventDefault(); 
-    portafolio();
+   // portafolio();
     if(info.posicion > 1) {
       info.padre.children().not('.active').css({
         'left' : '-100%'
@@ -255,9 +254,13 @@ $(document).ready(function (){
 
 // función portafolio
 function portafolio() {
-  if($('.slide').hasClass('portafolio') && $('.slide').hasClass('active')) {
+  if($('#portafolio').hasClass('.active')) {
     $('.contenedor').css('max-width', '850px');
-  }else{
-    $('.contenedor').css('max-width', '700px');
+    $('.contenedor').css('height', '1100px');
   }
+  if(!$('.slide').hasClass('portafolio')){
+    $('.contenedor').css('max-width', '700px');
+    $('.contenedor').css('height', '750px');
+  }
+  
 }

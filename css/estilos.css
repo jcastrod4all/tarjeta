@@ -289,6 +289,10 @@ a {
     .slider_info .informacion article .slide {
     padding: 5px 40px;
     }
+
+    .slider_banner {
+        margin-bottom: 20px;
+    }
 }
 
 .habilidades {
