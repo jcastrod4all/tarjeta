@@ -246,6 +246,10 @@ a {
         font-size: 12px;
         line-height: 22px;
     }
+
+    .proyectos {
+        grid-template-columns: 100%;
+    }
   }
 
   .proyectos {
@@ -276,3 +280,30 @@ a {
   .proyecto:hover {
       transform: scale(1.2);
   }
+
+  @media screen and (max-width: 699px) {
+    .proyectos {
+        grid-template-columns: 100%;
+    }
+    .slider_info .informacion article .slide {
+    padding: 5px 40px;
+    }
+}
+
+.habilidades {
+    display: flex;
+    justify-content: center;
+}
+
+.habilidades ul {
+    padding-left: 5px;
+    padding-right:5px;
+}
+.habilidades ul li {
+    list-style: none;
+}
+
+.acerca {
+    margin-bottom:5px;
+}
+
