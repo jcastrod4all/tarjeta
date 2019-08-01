@@ -293,6 +293,10 @@ a {
     .slider_banner {
         margin-bottom: 20px;
     }
+
+    .contenedor {
+        height: 725px;
+    }
 }
 
 .habilidades {

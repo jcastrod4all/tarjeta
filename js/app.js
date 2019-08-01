@@ -57,7 +57,7 @@ $(document).ready(function (){
 
   altoBanner();
   altoInfo();
-  altoContenedor();
+  //altoContenedor();
 
   // Adaptar tamaño de carta al contenido
   $(window).resize(function () {
@@ -161,7 +161,6 @@ $(document).ready(function (){
 
   $('#info-next').on('click', function (e){
     e.preventDefault();
-    portafolio();
     if(info.posicion < info.numeroSlides) {
       // Nos aseguramos de que las demas slides empiecen desde la derecha.
       info.padre.children().not('.active').css({
@@ -177,6 +176,22 @@ $(document).ready(function (){
       });
 
       $('#botones').children('.active').removeClass('active').next().addClass('active');
+
+
+      if($(window).width() < 698) {
+        if($('#info .active').hasClass('portafolio')) {
+          $('.contenedor').css('max-width', '850px');
+          $('.contenedor').css('height' , '1100px');
+        }else {
+          altoContenedor();
+        }
+  
+        if($('#info .active').hasClass('presentacion')) {
+          $('.contenedor').css('height' , '725px');
+        }
+      }else if($('#info .active').hasClass('portafolio')) {
+          $('.contenedor').css('max-width', '850px');
+        }
 
       info.posicion = info.posicion + 1;
     } 
@@ -200,6 +215,22 @@ $(document).ready(function (){
       $('#botones').children('.active').removeClass('active');
       $('#botones').children('span').first().addClass('active');
 
+
+      if($(window).width() < 698) {
+        if($('#info .active').hasClass('portafolio')) {
+          $('.contenedor').css('max-width', '850px');
+          $('.contenedor').css('height' , '1100px');
+        }else {
+          altoContenedor();
+        }
+  
+        if($('#info .active').hasClass('presentacion')) {
+          $('.contenedor').css('height' , '725px');
+        }
+      }else if($('#info .active').hasClass('portafolio')) {
+          $('.contenedor').css('max-width', '850px');
+        }
+
       // Reseteamos la posicion a 1
       info.posicion = 1;
     }
@@ -209,7 +240,6 @@ $(document).ready(function (){
   // Boton Anterior
   $('#info-prev').on('click', function(e){
     e.preventDefault(); 
-    portafolio();
     if(info.posicion > 1) {
       info.padre.children().not('.active').css({
         'left' : '-100%'
@@ -224,6 +254,22 @@ $(document).ready(function (){
       });
 
       $('#botones').children('.active').removeClass('active').prev().addClass('active');
+
+
+      if($(window).width() < 698) {
+        if($('#info .active').hasClass('portafolio')) {
+          $('.contenedor').css('max-width', '850px');
+          $('.contenedor').css('height' , '1100px');
+        }else {
+          altoContenedor();
+        }
+  
+        if($('#info .active').hasClass('presentacion')) {
+          $('.contenedor').css('height' , '725px');
+        }
+      }else if($('#info .active').hasClass('portafolio')) {
+          $('.contenedor').css('max-width', '850px');
+        }
 
       info.posicion = info.posicion - 1;
     }
@@ -245,6 +291,22 @@ $(document).ready(function (){
       $('#botones').children('.active').removeClass('active');
       $('#botones').children('span').last().addClass('active');
 
+
+      if($(window).width() < 698) {
+        if($('#info .active').hasClass('portafolio')) {
+          $('.contenedor').css('max-width', '850px');
+          $('.contenedor').css('height' , '1100px');
+        }else {
+          altoContenedor();
+        }
+  
+        if($('#info .active').hasClass('presentacion')) {
+          $('.contenedor').css('height' , '725px');
+        }
+      }else if($('#info .active').hasClass('portafolio')) {
+          $('.contenedor').css('max-width', '850px');
+        }
+
       info.posicion = info.numeroSlides;
     }
     altoInfo();
@@ -254,13 +316,12 @@ $(document).ready(function (){
 
 // función portafolio
 function portafolio() {
-  console.log($('.slide').hasClass('portafolio'))
-  console.log($('.slide').hasClass('active'))
-  if($('.slide').hasClass('portafolio')) {
+  console.log($('#informacion #info .slide').hasClass('portafolio') && $('#informacion #info .slide').hasClass('active'));
+  if($('#informacion #info .slide').hasClass('portafolio') && $('#informacion #info .slide').hasClass('active')) {
     $('.contenedor').css('max-width', '850px');
     $('.contenedor').css('height', '1100px');
   }
-  if(!$('.slide').hasClass('portafolio')){
+  else {
     $('.contenedor').css('max-width', '700px');
     altoContenedor();
   }
