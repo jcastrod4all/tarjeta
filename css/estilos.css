@@ -256,7 +256,7 @@ a {
       display: grid;
       flex-wrap: wrap;
       grid-template-columns: 33.33% 33.33% 33.33%;
-      grid-gap: 5px;
+      grid-gap: 25px;
   }
 
   .proyectos .proyecto img {
